@@ -1,0 +1,12 @@
+\Thank you for installing the Data Ingest application!
+
+To verify your application is running, check the pods in the default namespace:
+
+kubectl get pods -l app={{ .Release.Name }}
+
+To check the service status, you can run:
+
+kubectl get service {{ .Release.Name }}
+
+Access the application via the exposed service or ingress (if enabled).
+

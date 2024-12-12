@@ -1,0 +1,10 @@
+# Core dependencies for the project
+fastavro==1.8.3
+confluent-kafka==2.2.0
+PyYAML==6.0
+loguru
+requests
+pathlib2==2.3.7.post1
+jsonschema==4.19.0
+python-dateutil==2.8.2
+setuptools==75.1.0

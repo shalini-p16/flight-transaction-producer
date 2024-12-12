@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-ingest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-ingest
+  template:
+    metadata:
+      labels:
+        app: data-ingest
+    spec:
+      containers:
+        - name: data-ingest-container
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            - name: BROKER
+              value: "{{ .Values.kafka.broker }}"
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"

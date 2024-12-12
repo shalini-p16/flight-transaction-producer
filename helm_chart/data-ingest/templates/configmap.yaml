@@ -1,0 +1,11 @@
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: {{ .Release.Name }}-data-ingest-config
+#  labels:
+#    app: data-ingest
+#data:
+#  application.properties: |
+#    kafka.broker={{ .Values.kafka.broker }}
+#    kafka.topics={{ join "," .Values.kafka.topics }}
+#

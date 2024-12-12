@@ -1,0 +1,36 @@
+replicaCount: 1
+
+image:
+  name: "data-ingest-image"
+  repository: "data-ingest-image"
+  tag: "latest"
+  pullPolicy: "Never"
+
+kafka:
+  broker: "my-kafka-service:9092"
+
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 500m
+  requests:
+    memory: 256Mi
+    cpu: 250m
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+ingress:
+  enabled: false
+  # Add other ingress-related configurations as necessary
+  # Example: Ingress for your application
+  hosts:
+    - host: myapp.local
+      paths:
+        - /
+
+service:
+  type: ClusterIP
+  port: 80
+  # You can specify other service configurations like targetPort, selector, etc.

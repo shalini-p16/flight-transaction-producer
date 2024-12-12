@@ -1,0 +1,20 @@
+app:
+  thread_count: 5
+  log_file: "logs/app.log"
+  chunk_size: 1000
+  transaction_file: "data/transactions.json"
+  location_file: "data/locations.json"
+  transaction_schema: "schemas/transaction_schema.json"
+  location_schema: "schemas/location_schema.json"
+
+kafka:
+  bootstrap_servers: "localhost:9092"
+  topic_transaction: "Transaction"
+  topic_location: "Location"
+  topic_dlq: "DeadLetterQueueTopic"
+
+logging:
+  level: "INFO" # Logging level
+  format: "%(asctime)s [%(levelname)s] %(message)s"
+
+
